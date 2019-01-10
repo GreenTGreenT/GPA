@@ -44,12 +44,12 @@ def save_csv():
 
 def main():
     print("Please choose your mode \n Edit(E) Insert(I) Save(s)")
-    mode = input("Enter your mode: ")
-    if mode == "E" or "e":
+    mode = input("Enter your mode: ").upper()
+    if mode == "E":
+        edit_csv()
+    elif mode == "I":
         insert_csv()
-    elif mode == "I" or "i":
-        insert_csv()
-    elif mode == "S" or "s":
+    elif mode == "S":
         save_csv()
     else:
         print("Please try again")
