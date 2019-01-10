@@ -4,9 +4,13 @@ data = []
 
 def read_csv():
     with open('GPA.csv', 'r') as f:
-        read = csv.reader(f)
-        for i in read:
+        reader = csv.reader(f)
+        for i in reader:
             data.append(i) 
+'''def write_csv():
+    with open('GPA.csv', 'w') as f:
+        writer = csv.writer(f) '''
+        
           
 def grade_num():
     grade = {'A': 4,
@@ -23,16 +27,17 @@ def edit_csv():
 
 def insert_csv():
     read_csv()
+    #print(data)
     term = input("Enter your term number: ")
     subject = input("Enter your subject: ")
     credit = input("Enter your credit: ")
     grade = input("Enter your grade: ")
-    data.append([])
-    for i in range(len(data)):
-        data[i].extend((term, subject, credit, grade))
-    #print(data[i])
-
-        
+    data.extend(([[term, subject, credit, grade]]))
+    
+    with open('GPA.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerows(data) 
+    #print(data)     
 
 def save_csv():
     print("Toy s")
