@@ -34,9 +34,9 @@ def edit_csv():
             subject = input("Enter your subject: ")
             credit = input("Enter your credit: ")
             grade = input("Enter your grade: ").upper()
-            data[int(i)][1] = subject
-            data[int(i)][2] = credit
-            data[int(i)][3] = grade
+            data[i][1] = subject
+            data[i][2] = credit
+            data[i][3] = grade
             save_csv(term)
 
 def insert_csv():
@@ -73,7 +73,7 @@ def calculation(term):
             sum_multiple += int(data[i][2]) * grade.get(data[i][3])
             sum_credit += int(data[i][2]) 
             to_result = sum_multiple / sum_credit
-    print("You GPA is ", "%.2f " % to_result)
+    print("Your GPA is ", "%.2f " % to_result)
         
 def main():
     print("Please choose your mode \n Edit(E) Insert(I)")
@@ -82,10 +82,6 @@ def main():
         edit_csv()
     elif mode == "I":
         insert_csv()
-    elif mode == "C":
-        calculation()
-    elif mode == "S":
-        save_csv()
     else:
         print("Please try again")
         main()
