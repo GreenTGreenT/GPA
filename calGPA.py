@@ -1,9 +1,7 @@
 import csv
-import operator
+#import operator
 
 data = []
-result = []
-total_credit = []
 grade = {"A": 4,
          "B+": 3.5,
          "B": 3,
@@ -47,23 +45,15 @@ def insert_csv():
     num_subject = int(input("Enter total number of your subjects: "))
     for i in range(num_subject):        
         term = input("Enter your term number: ")
-           
         subject = input("Enter your subject: ")
-           
-
         credit = input("Enter your credit: ")
-        
-
-
         grade = input("Enter your grade: ").upper()
         data.append([term, subject, credit, grade])
-              
     save = input("Do you want to save?: ").upper()
     if save == "S":
         save_csv(term)
     elif save == "Q":
         exit()
-
     
 def save_csv(term):
     #print(data)
@@ -84,7 +74,6 @@ def calculation(term):
             sum_credit += int(data[i][2]) 
             to_result = sum_multiple / sum_credit
     print("You GPA is ", "%.2f " % to_result)
-                 
         
 def main():
     print("Please choose your mode \n Edit(E) Insert(I)")
